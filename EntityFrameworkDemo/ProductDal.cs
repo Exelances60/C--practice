@@ -55,5 +55,39 @@ namespace EntityFrameworkDemo
 
             }
         }
+        public List<Product> GetByUnitPrice(decimal min, decimal max)
+        {
+            if(min > max)
+            {
+                MessageBox.Show("Min price can not be greater than max price!");
+                return GetAll();
+            }
+
+            if(min == max)
+            {
+                return GetAll().Where(p => p.UnitPrice == min).ToList();
+            }
+
+            if(min < 0 || max < 0)
+            {
+                MessageBox.Show("Prices can not be negative!");
+                return GetAll();
+            }
+
+            using (EtradeContext context = new EtradeContext())
+            {
+                return context.Products.Where(p => p.UnitPrice >= min && p.UnitPrice <= max).ToList();
+
+            }
+        }
+
+        public Product GetById(int id)
+        {
+            using (EtradeContext context = new EtradeContext())
+            {
+                return context.Products.FirstOrDefault(p => p.Id == id); //FirstOrDefault bulamazsa null döner. ilk bulduğunu getirir. SingleOrDefault birden fazla varsa hata verir.
+
+            }
+        }
     }
 }

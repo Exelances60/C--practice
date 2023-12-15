@@ -118,5 +118,10 @@ namespace EntityFrameworkDemo
             dgwProducts.DataSource = _productDal.GetByName(tbxSearch.Text);
 
         }
+
+        private void btnUnitFilter_Click(object sender, EventArgs e)
+        {
+            dgwProducts.DataSource= _productDal.GetByUnitPrice(Convert.ToDecimal(tbxUnitMin.Text), Convert.ToDecimal(tbxUnitMax.Text));
+        }
     }
 }

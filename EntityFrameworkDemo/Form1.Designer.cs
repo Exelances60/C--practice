@@ -50,6 +50,11 @@
             this.dgwProducts = new System.Windows.Forms.DataGridView();
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbxUnitMin = new System.Windows.Forms.TextBox();
+            this.tbxUnitMax = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnUnitFilter = new System.Windows.Forms.Button();
             this.gbxUpdate.SuspendLayout();
             this.gbxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
@@ -265,11 +270,58 @@
             this.tbxSearch.TabIndex = 21;
             this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Minimum Deger";
+            // 
+            // tbxUnitMin
+            // 
+            this.tbxUnitMin.Location = new System.Drawing.Point(108, 17);
+            this.tbxUnitMin.Name = "tbxUnitMin";
+            this.tbxUnitMin.Size = new System.Drawing.Size(100, 20);
+            this.tbxUnitMin.TabIndex = 23;
+            // 
+            // tbxUnitMax
+            // 
+            this.tbxUnitMax.Location = new System.Drawing.Point(317, 18);
+            this.tbxUnitMax.Name = "tbxUnitMax";
+            this.tbxUnitMax.Size = new System.Drawing.Size(100, 20);
+            this.tbxUnitMax.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Maksimum Deger";
+            // 
+            // btnUnitFilter
+            // 
+            this.btnUnitFilter.Location = new System.Drawing.Point(423, 16);
+            this.btnUnitFilter.Name = "btnUnitFilter";
+            this.btnUnitFilter.Size = new System.Drawing.Size(109, 23);
+            this.btnUnitFilter.TabIndex = 26;
+            this.btnUnitFilter.Text = "Unit Price Filter";
+            this.btnUnitFilter.UseVisualStyleBackColor = true;
+            this.btnUnitFilter.Click += new System.EventHandler(this.btnUnitFilter_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 454);
+            this.Controls.Add(this.btnUnitFilter);
+            this.Controls.Add(this.tbxUnitMax);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbxUnitMin);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.gbxUpdate);
@@ -312,6 +364,11 @@
         private System.Windows.Forms.DataGridView dgwProducts;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbxUnitMin;
+        private System.Windows.Forms.TextBox tbxUnitMax;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnUnitFilter;
     }
 }
 
