@@ -46,8 +46,8 @@
             this.tbxUpdateStockAmount = new System.Windows.Forms.TextBox();
             this.lblUpdateStockAmount = new System.Windows.Forms.Label();
             this.gbxUpdate = new System.Windows.Forms.GroupBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.gbxAdd.SuspendLayout();
             this.gbxUpdate.SuspendLayout();
@@ -142,7 +142,7 @@
             // lblUpdateId
             // 
             this.lblUpdateId.AutoSize = true;
-            this.lblUpdateId.Location = new System.Drawing.Point(53, 26);
+            this.lblUpdateId.Location = new System.Drawing.Point(53, 33);
             this.lblUpdateId.Name = "lblUpdateId";
             this.lblUpdateId.Size = new System.Drawing.Size(16, 13);
             this.lblUpdateId.TabIndex = 8;
@@ -150,7 +150,7 @@
             // 
             // tbxUpdateId
             // 
-            this.tbxUpdateId.Location = new System.Drawing.Point(103, 19);
+            this.tbxUpdateId.Location = new System.Drawing.Point(103, 26);
             this.tbxUpdateId.Name = "tbxUpdateId";
             this.tbxUpdateId.Size = new System.Drawing.Size(132, 20);
             this.tbxUpdateId.TabIndex = 9;
@@ -222,16 +222,6 @@
             this.gbxUpdate.TabStop = false;
             this.gbxUpdate.Text = "Update Data";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(295, 80);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Red;
@@ -245,6 +235,16 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(295, 80);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Form1
             // 
