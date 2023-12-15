@@ -36,6 +36,11 @@ namespace EntityFrameworkDemo
             dgwProducts.DataSource = _productDal.GetAll();
         }
 
+        protected void SearchTheDataGrid()
+        {
+            dgwProducts.DataSource = _productDal.GetAll().Where(p => p.Name.ToLower().Contains(tbxSearch.Text.ToLower())).ToList();
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +48,7 @@ namespace EntityFrameworkDemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Dispose direkt bellekten siler. using ile kullanılır.
+            //using kullarak Dispose ederiz direkt bellekten siler. using ile kullanılır.
             //using (EtradeContext context = new EtradeContext())
             //{
             //    dgwProducts.DataSource = context.Products.Add(new Product { Name = "Samsung S6", UnitPrice = 2000, StockAmount = 100 });
@@ -83,13 +88,13 @@ namespace EntityFrameworkDemo
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-             _productDal.Update(new Product
-             {
-                 Id = Convert.ToInt32(tbxIdUpdate.Text),
-                 Name = tbxNameUpdate.Text,
-                 UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text),
-                 StockAmount = Convert.ToInt32(tbxStockAmountUpdate.Text)
-             });
+            _productDal.Update(new Product
+            {
+                Id = Convert.ToInt32(tbxIdUpdate.Text),
+                Name = tbxNameUpdate.Text,
+                UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text),
+                StockAmount = Convert.ToInt32(tbxStockAmountUpdate.Text)
+            });
             clearTheTextBox("update");
             LoadTheDataGrid();
             MessageBox.Show("Updated!");
@@ -104,6 +109,13 @@ namespace EntityFrameworkDemo
             clearTheTextBox("update");
             LoadTheDataGrid();
             MessageBox.Show("Deleted!");
+
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+
+            dgwProducts.DataSource = _productDal.GetByName(tbxSearch.Text);
 
         }
     }
