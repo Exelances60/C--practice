@@ -18,6 +18,7 @@ namespace Delegates
             Console.WriteLine("-------------");
             myDelegate += customerManager.ShowAlert; // 3. elçiye metot atadık
             myDelegate();
+            Console.WriteLine("-------------");
 
             Console.ReadLine();
         }
